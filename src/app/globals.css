@@ -1,7 +1,40 @@
 @import "tailwindcss";
 
+/* Custom Font Faces */
+@font-face {
+  font-family: 'Gilroy';
+  src: url('/fonts/Gilroy-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Mazius';
+  src: url('/fonts/Mazius-Extraitalic.121a71a7.otf') format('opentype');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'FoundersGrotesk';
+  src: url('/fonts/FoundersGrotesk-Semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'NeueMontreal';
+  src: url('/fonts/NeueMontreal-Regular (2).ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  --background: #ffffff;
+  --background: #FCFAF8;
   --foreground: #171717;
 }
 
@@ -10,17 +43,34 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-gilroy: 'Gilroy', system-ui, -apple-system, sans-serif;
+  --font-mazius: 'Mazius', serif;
+  --font-founders: 'FoundersGrotesk', system-ui, -apple-system, sans-serif;
+  --font-montreal: 'NeueMontreal', system-ui, -apple-system, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* Removed dark mode media query to maintain consistent background color */
+/* Background will always remain #FCFAF8 regardless of browser theme */
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-gilroy);
+}
+
+/* Utility classes for custom fonts */
+.font-gilroy {
+  font-family: var(--font-gilroy);
+}
+
+.font-mazius {
+  font-family: var(--font-mazius);
+}
+
+.font-founders {
+  font-family: var(--font-founders);
+}
+
+.font-montreal {
+  font-family: var(--font-montreal);
 }
