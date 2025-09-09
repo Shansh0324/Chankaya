@@ -139,7 +139,7 @@ const About = () => {
         }
       `}</style>
 
-      <div className="container lg:mt-90 text-[#333333] tracking-tight relative ">
+      <div className="container lg:mt-90 text-[#333333] tracking-tight relative">
         <div
           id="imagery"
           className="max-w-[80%] mx-auto flex flex-col lg:flex-row gap-[6vw] items-center lg:items-start"
