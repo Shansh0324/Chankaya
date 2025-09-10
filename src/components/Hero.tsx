@@ -1,6 +1,5 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import TypewriterEffect from "./TypewriterEffect";
 
 const Hero = () => {
   const [currentTime, setCurrentTime] = useState("");

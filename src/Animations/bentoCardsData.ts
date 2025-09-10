@@ -28,7 +28,7 @@ export const bentoCardsData: BentoCardData[] = [
     className: "bento2"
   },
   {
-    id: "warmth",
+    id: "Warmth",
     imageSrc: "assets/img5.png",
     imageAlt: "Futuristic Human Portrait",
     labelText: "W",

@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import BentoPopup from "../Animations/BentoPopup";
-import { bentoPopupData, PopupContent } from "../Animations/bentoPopupData";
+import { bentoPopupData } from "../Animations/bentoPopupData";
 import BentoCard from "../Animations/BentoCard";
 import { bentoCardsData } from "../Animations/bentoCardsData";
 import WrapButton from "../Animations/wrap-button";

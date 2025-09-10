@@ -1,28 +1,41 @@
 "use client";
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 // Words to cycle through
-const words = ["Hello", "Namaste","Bonjour", "Ciao", "Olà", "やあ", "Hallå", "Guten tag", "Hallo"];
+const words = [
+  "Hello",
+  "Namaste",
+  "Bonjour",
+  "Ciao",
+  "Olà",
+  "やあ",
+  "Hallå",
+  "Guten tag",
+  "Hallo",
+];
+
+// Proper easing type
+const ease: [number, number, number, number] = [0.76, 0, 0.24, 1];
 
 // Animation variants
-const opacity = {
+const opacity: Variants = {
   initial: { opacity: 0 },
   enter: { opacity: 1, transition: { duration: 1, delay: 0.2 } },
 };
 
-const slideUp = {
+const slideUp: Variants = {
   initial: { top: 0 },
-  enter: { top: 0, transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] as any } },
-  exit: {
-    top: "-100vh",
-    transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] as any, delay: 0.2 },
-  },
+  enter: { top: 0, transition: { duration: 0.8, ease } },
+  exit: { top: "-100vh", transition: { duration: 0.8, ease, delay: 0.2 } },
 };
 
 export default function Preloader() {
   const [index, setIndex] = useState(0);
-  const [dimension, setDimension] = useState({ width: 0, height: 0 });
+  const [dimension, setDimension] = useState<{ width: number; height: number }>({
+    width: 0,
+    height: 0,
+  });
 
   // Track window size
   useEffect(() => {
@@ -52,14 +65,14 @@ export default function Preloader() {
     dimension.width / 2
   } ${dimension.height} 0 ${dimension.height}  L0 0`;
 
-  const curve = {
+  const curve: Variants = {
     initial: {
       d: initialPath,
-      transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1] as any },
+      transition: { duration: 0.7, ease },
     },
     exit: {
       d: targetPath,
-      transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1] as any, delay: 0.3 },
+      transition: { duration: 0.7, ease, delay: 0.3 },
     },
   };
 
@@ -80,7 +93,6 @@ export default function Preloader() {
             animate="enter"
             className="absolute flex items-center text-white text-[clamp(24px,4vw,42px)] z-10 pointer-events-none"
           >
-            {/* <span className="block w-[10px] h-[10px] bg-white rounded-full mr-2"></span> */}
             {words[index]}
           </motion.p>
 

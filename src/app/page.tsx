@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import { AnimatePresence } from 'framer-motion';
-import Image from "next/image";
 import AIInputBar from "@/components/AIInputBar";
 import About from "@/components/About";
 import Gallery from "@/components/Gallery";
