@@ -179,6 +179,7 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+    overflow: auto !important; /* Force scrolling to always be enabled */
   }
 }
 
@@ -187,7 +188,7 @@ body {
 .bento-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 19vw);
+  grid-template-rows: repeat(2, 18vw);
   gap: 2vw;
   width: 100%;
   max-width: 1200px;
@@ -201,7 +202,7 @@ body {
   box-shadow: 0 8px 32px 0 rgba(20, 207, 147, 0.12),
     0 3px 16px 0 rgba(0, 0, 0, 0.08);
   background: #181818;
-  transition: transform 0.2s cubic-bezier(.4, 2, .6, 1), box-shadow 0.2s;
+  transition: transform 0.6s cubic-bezier(.4, 2, .6, 1), box-shadow 0.2s;
 }
 
 .bento-item:hover {
@@ -292,16 +293,216 @@ body {
 
 @media (max-width: 600px) {
   .bento-grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 60vw);
+    grid-template-columns: 1fr !important;
+    grid-template-rows: 80vw 70vw 70vw 70vw !important;
+    padding: 0 5vw;
+    gap: 2vw;
   }
 
   .bento-item {
-    border-radius: 5vw;
+    border-radius: 3vw;
+    grid-column: 1 !important;
+    grid-row: auto !important;
+  }
+
+  .bento-item.bento1 {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+  }
+
+  .bento-item.bento2 {
+    grid-column: 1 !important;
+    grid-row: 2 !important;
+  }
+
+  .bento-item.bento3 {
+    grid-column: 1 !important;
+    grid-row: 3 !important;
+  }
+
+  .bento-item.bento4 {
+    grid-column: 1 !important;
+    grid-row: 4 !important;
   }
 
   .bento-item .bento-label {
     font-size: 5vw;
+  }
+}
+
+/* Additional mobile responsive breakpoint */
+@media (max-width: 768px) {
+  .bento-grid {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: 80vw 70vw 70vw 70vw !important;
+    padding: 0 6vw;
+    gap: 3vw;
+  }
+
+  .bento-item {
+    border-radius: 3vw;
+  }
+
+  .bento-item.bento1,
+  .bento-item.bento2, 
+  .bento-item.bento3,
+  .bento-item.bento4 {
+    grid-column: 1 !important;
+  }
+
+  .bento-item.bento1 { grid-row: 1 !important; }
+  .bento-item.bento2 { grid-row: 2 !important; }
+  .bento-item.bento3 { grid-row: 3 !important; }
+  .bento-item.bento4 { grid-row: 4 !important; }
+}
+
+/* Popup Modal Styles */
+.popup-overlay {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  animation: fadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.popup-content {
+  animation: popupSlideIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+
+/* Enhanced glass morphism effect */
+.popup-content {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+  box-shadow: 
+    0 25px 45px rgba(0, 0, 0, 0.1),
+    0 15px 35px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Popup Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes popupSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+    filter: blur(10px);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(0.95) translateY(10px);
+    filter: blur(5px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0px);
+  }
+}
+
+/* Smooth exit animation */
+.popup-overlay.closing {
+  animation: fadeOut 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.popup-content.closing {
+  animation: popupSlideOut 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes popupSlideOut {
+  from {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0px);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.95) translateY(-10px);
+    filter: blur(2px);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.8) translateY(-20px);
+    filter: blur(5px);
+  }
+}
+
+/* Enhanced bento item hover for better interaction feedback */
+.bento-item.cursor-pointer:hover .bento-label {
+  background: linear-gradient(135deg, rgba(255, 152, 0, 0.1), rgba(255, 255, 255, 0.9));
+  transform: translateY(-2px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Apply hover effect to all bento items */
+.bento-item.cursor-pointer {
+  transition: transform 0.6s cubic-bezier(.4, 2, .6, 1), box-shadow 0.2s;
+}
+
+.bento-item.cursor-pointer:hover {
+  transform: translateY(-1vw) scale(1.05);
+  box-shadow: 0 16px 48px 0 #a3a3a3,
+    0 6px 24px 0 rgba(255, 255, 255, 0.12);
+}
+
+/* Popup responsiveness - moved after bento grid rules */
+@media (max-width: 767px) {
+  .popup-content {
+    margin: 1rem;
+    padding: 1.5rem;
+    max-width: calc(100vw - 2rem);
+  }
+  
+  .popup-content h2 {
+    font-size: 2rem;
+  }
+  
+  .popup-content .space-y-6 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .popup-content {
+    margin: 0.5rem;
+    padding: 1rem;
+    border-radius: 1.5rem;
+  }
+  
+  .popup-content h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Close button animation */
+.popup-content .close-button {
+  animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
   }
 }
 

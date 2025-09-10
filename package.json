@@ -37,6 +37,8 @@
     "@types/react-responsive": "^8.0.8",
     "eslint": "^9",
     "eslint-config-next": "15.5.2",
+    "glslify-loader": "^2.0.0",
+    "raw-loader": "^4.0.2",
     "tailwindcss": "^4",
     "tw-animate-css": "^1.3.8",
     "typescript": "^5",
