@@ -296,7 +296,7 @@ body {
     grid-template-columns: 1fr !important;
     grid-template-rows: 80vw 70vw 70vw 70vw !important;
     padding: 0 5vw;
-    gap: 2vw;
+    gap: 6vw;
   }
 
   .bento-item {
@@ -336,7 +336,7 @@ body {
     grid-template-columns: 1fr !important;
     grid-template-rows: 80vw 70vw 70vw 70vw !important;
     padding: 0 6vw;
-    gap: 3vw;
+    gap: 7vw;
   }
 
   .bento-item {

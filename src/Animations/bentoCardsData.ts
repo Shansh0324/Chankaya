@@ -28,12 +28,12 @@ export const bentoCardsData: BentoCardData[] = [
     className: "bento2"
   },
   {
-    id: "Warmth",
+    id: "warmth",
     imageSrc: "assets/img5.png",
     imageAlt: "Futuristic Human Portrait",
     labelText: "W",
-    accentText: "a",
-    accentPosition: "middle",
+    accentText: "armth",
+    accentPosition: "after",
     className: "bento3"
   },
   {
