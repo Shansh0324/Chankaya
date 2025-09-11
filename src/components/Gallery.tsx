@@ -21,8 +21,8 @@ const Gallery = () => {
 
   return (
     <>
-      <section className="realtive  -z-10 py-[6vw]">
-        <div className="container bg-[#F2F2F2] min-h-screen py-[2.5vw] absolute ">
+      <section className="relative py-[6vw]">
+        <div className="container bg-[#F2F2F2] min-h-screen py-[2.5vw] relative">
           {/* 🔹 Top Left Text Section (unchanged) */}
           <div className="text-top-left px-35 leading-none py-[10vw] ">
             <div className="flex items-center justify-start gap-8 leading-none text-[9vw] tracking-tight text-[#333333]">

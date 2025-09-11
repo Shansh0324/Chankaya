@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <section>
       <div className="container">
-        <nav className="py-10 relative">
+        <nav className="py-6 lg:py-8 relative">
           <div className="flex justify-between items-center max-w-[90%] mx-auto text-[0.8vw] font-semibold text-[#333333] text-transform uppercase tracking-wide leading-4">
             <a
               href="#"

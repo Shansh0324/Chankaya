@@ -1,87 +1,3 @@
-// "use client";
-// import React from "react";
-// import ImageCard from "@/Animations/ImageCard";
-
-// const About = () => {
-//   return (
-//     <>
-//       <style jsx>{`
-//         #work::before {
-//           content: "";
-//           bottom: -11vw;
-//           position: absolute;
-//           width: 100%;
-//           height: 150px;
-//           background-image: url(/assets/rip.f6d7c4dd.svg);
-//           background-size: cover;
-//           transform: rotate(-180deg);
-//           z-index: -1;
-//         }
-//       `}</style>
-//       <div className="container lg:mt-90 text-[#333333] tracking-tight relative">
-//         <div
-//           id="imagery"
-//           className="max-w-[80%] mx-auto flex flex-col md:flex-row gap-[6vw] items-center md:items-start"
-//         >
-//           {/* Left Text */}
-//           <div
-//             id="imglef"
-//             className="text-center md:text-left w-full md:w-auto"
-//           >
-//             <h1 className="text-3xl sm:text-4xl leading-none">
-//               We are{" "}
-//               <i className="font-mazius text-[#ff9800]">Chankaya,</i> <br />
-//               crafting{" "}
-//               <span
-//                 style={{ color: "#ff9800", fontFamily: "mazius" }}
-//               >
-//                 Unforgettable
-//               </span>{" "}
-//               <br />
-//               journeys across the globe, <br />
-//               bringing you closer to <br />
-//               cultures, landscapes, and <br />
-//               experiences that inspire. <br />
-//               <span
-//                 style={{ color: "#ff9800", fontFamily: "mazius" }}
-//               >
-//                 Explore. Dream. Discover.
-//               </span>
-//             </h1>
-//           </div>
-
-//           {/* Right Images (hidden on small screens) */}
-//           <div
-//             id="imgrig"
-//             className="relative hidden md:flex items-center justify-center w-[60%] h-[300px] mx-auto"
-//           >
-//             <ImageCard
-//               imageUrl="/assets/img1.jpeg"
-//               transform="translate(-40%,-8%) rotate(-20deg)"
-//               alt="Travel destination image 1"
-//             />
-
-//             <ImageCard
-//               imageUrl="/assets/img2.jpeg"
-//               transform="translate(-15%,0%) rotate(-15deg)"
-//               alt="Travel destination image 2"
-//             />
-
-//             <ImageCard
-//               imageUrl="/assets/img3.jpeg"
-//               transform="translate(20%,10%) rotate(-5deg)"
-//               alt="Travel destination image 3"
-//             />
-//           </div>
-//         </div>
-
-//         <div id="work"></div>
-//       </div>
-//     </>
-//   );
-// };
-
-// export default About;
 "use client";
 import React from "react";
 import ImageCard from "@/Animations/ImageCard";
@@ -147,13 +63,13 @@ const About = () => {
           {/* Left Text */}
           <div
             id="imglef"
-            className="text-center lg:text-left w-full lg:w-auto mt-6 sm:mt-10 lg:mt-0"
+            className="text-center lg:text-left w-full lg:w-auto mt-6 sm:mt-10 lg:mt-0 py-12 lg:py-20"
           >
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl leading-none max-w-[90%] mx-auto lg:mx-0">
               We are <i className="font-mazius text-[#ff9800]">Chankaya,</i>{" "}
               <br />
               crafting{" "}
-              <span style={{ color: "#ff9800", fontFamily: "mazius" }}>
+              <span className="font-mazius text-[#ff9800]">
                 Unforgettable
               </span>{" "}
               <br />
@@ -161,7 +77,7 @@ const About = () => {
               bringing you closer to <br />
               cultures, landscapes, and <br />
               experiences that inspire. <br />
-              <span style={{ color: "#ff9800", fontFamily: "mazius" }}>
+              <span className="font-mazius text-[#ff9800]">
                 Explore. Dream. Discover.
               </span>
             </h1>

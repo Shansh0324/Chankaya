@@ -7,6 +7,7 @@ import AIInputBar from "@/components/AIInputBar";
 import About from "@/components/About";
 import Gallery from "@/components/Gallery";
 import Preloader from "@/components/PreLoader";
+import ChooseUs from "@/components/ChooseUs";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -31,6 +32,7 @@ export default function Home() {
           <AIInputBar />
           <About />
           <Gallery />
+          <ChooseUs />
         </>
       )}
      </>

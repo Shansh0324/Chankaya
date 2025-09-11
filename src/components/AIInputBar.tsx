@@ -90,7 +90,7 @@ const AIInputBar: React.FC<AIInputBarProps> = ({
   const canSend = inputValue.trim().length > 0 || hasUploadedMedia;
 
   return (
-    <div className="w-full max-w-4xl mx-auto p-4">
+    <section className="w-full max-w-4xl mx-auto p-4 py-0 lg:-mt-8">
       <div className="relative">
         {/* Main input container */}
         <div className="flex items-end gap-3 p-3 bg-[#FCFAF8] backdrop-blur-sm rounded-3xl border border-gray-300/50 shadow-lg">
@@ -236,7 +236,7 @@ const AIInputBar: React.FC<AIInputBarProps> = ({
           </div>
         </div>
       )}
-    </div>
+    </section>
   );
 };
 
