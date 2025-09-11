@@ -21,7 +21,7 @@ const Gallery = () => {
 
   return (
     <>
-      <section className="relative py-[6vw]">
+      <section className="relative ">
         <div className="container bg-[#F2F2F2] min-h-screen py-[2.5vw] relative">
           {/* 🔹 Top Left Text Section (unchanged) */}
           <div className="text-top-left px-35 leading-none py-[10vw] ">
