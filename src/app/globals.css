@@ -535,3 +535,13 @@ body {
   }
 }
 
+/* Hide scrollbar for popup content while maintaining scroll functionality */
+.popup-content .overflow-y-auto {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.popup-content .overflow-y-auto::-webkit-scrollbar {
+  display: none; /* WebKit */
+}
+

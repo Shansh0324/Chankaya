@@ -66,7 +66,7 @@ const BentoPopup: React.FC<BentoPopupProps> = ({ isOpen, onClose, content }) => 
       onClick={closePopup}
     >
       <div
-        className={`popup-content relative bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-6 sm:p-8 max-w-2xl w-full mx-2 sm:mx-4 shadow-2xl max-h-[90vh] overflow-y-auto ${
+        className={`popup-content relative bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-6 sm:p-8 max-w-2xl w-full mx-2 sm:mx-4 shadow-2xl max-h-[90vh] overflow-hidden ${
           isClosing ? "closing" : ""
         }`}
         onClick={(e) => e.stopPropagation()}
@@ -92,8 +92,8 @@ const BentoPopup: React.FC<BentoPopupProps> = ({ isOpen, onClose, content }) => 
         </button>
 
         {/* Content */}
-        <div className="text-center text-white px-2 sm:px-0">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-mazius mb-4 sm:mb-6 text-white leading-tight">
+        <div className="text-center text-white px-2 sm:px-0 flex flex-col h-full">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-mazius mb-4 sm:mb-6 text-white leading-tight flex-shrink-0">
             {content.title}
             {content.titleAccent && (
               content.title === "W" ? (
@@ -105,7 +105,7 @@ const BentoPopup: React.FC<BentoPopupProps> = ({ isOpen, onClose, content }) => 
             {content.title === "W" && "rmth"}
           </h2>
 
-          <div className="space-y-4 sm:space-y-6 text-base sm:text-lg leading-relaxed">
+          <div className="space-y-4 sm:space-y-6 text-base sm:text-lg leading-relaxed flex-1 overflow-y-auto">
             {content.description.map((paragraph, index) => (
               <p
                 key={index}
