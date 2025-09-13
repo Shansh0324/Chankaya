@@ -21,22 +21,27 @@ const Gallery = () => {
 
   return (
     <>
-      <section className="relative pt-[6vw]">
-        <div className="container bg-[#F2F2F2] min-h-screen py-[3vw] relative">
-          {/* 🔹 Top Left Text Section (unchanged) */}
-          <div className="text-top-left px-35 leading-none py-[10vw] ">
-            <div className="flex items-center justify-start gap-8 leading-none text-[9vw] tracking-tight text-[#333333]">
+      <section
+        id="gallery"
+        className="relative pt-[6vw] bg-[#F2F2F2] overflow-visible"
+      >
+        <div className="container min-h-screen py-[3vw] relative max-w-[85%] mx-auto">
+          {/* Top Left Text */}
+          <div className="text-left px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 leading-none py-8 sm:py-12 md:py-16 lg:py-[10vw]">
+            <div className="flex items-start justify-start gap-2 sm:gap-4 md:gap-6 lg:gap-8 leading-none text-[8vw] sm:text-[7vw] md:text-[6vw] lg:text-[9vw]  tracking-tight text-[#333333] whitespace-nowrap">
               <h1>
                 <i className="font-mazius text-[#ff9800]">How </i> it Wo
-                <i className="font-mazius text-[#ff9800]">r</i>ks <span className="font-mazius text-[#ff9800]">?</span>
+                <i className="font-mazius text-[#ff9800]">r</i>ks{" "}
+                <span className="font-mazius text-[#ff9800]">?</span>
               </h1>
             </div>
-            <p className="text-[1.2vw] text-[#979898] uppercase tracking-wide p-2">
-              solutions delivered <i className="font-mazius text-[#ff9800]">with</i> excellence
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[1.2vw] text-[#979898] uppercase tracking-wide p-2">
+              solutions delivered{" "}
+              <i className="font-mazius text-[#ff9800]">with</i> excellence
             </p>
           </div>
 
-          {/* 🔹 Bento Grid Section */}
+          {/* Bento Grid */}
           <div className="bento-grid">
             {bentoCardsData.map((card) => (
               <BentoCard
@@ -52,8 +57,8 @@ const Gallery = () => {
               />
             ))}
           </div>
-          
-          {/* 🔹 Call to Action Button */}
+
+          {/* Call to Action Button */}
           <div className="flex justify-center mt-[4vw] pb-[2vw]">
             <WrapButton href="#" className="mt-8 text-gilroy ">
               <Globe className="animate-spin" />
@@ -65,7 +70,7 @@ const Gallery = () => {
         </div>
       </section>
 
-      {/* 🔹 Reusable Popup Modal */}
+      {/* Popup */}
       {activePopup && bentoPopupData[activePopup] && (
         <BentoPopup
           isOpen={true}

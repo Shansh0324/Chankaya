@@ -13,7 +13,7 @@ const highlightKeywords = (text: string) => {
     
     return shouldHighlight ? (
       <span key={wordIndex}>
-        <i className="font-mazius text-[#ff9800] text-[4vw] sm:text-[3vw] lg:text-[1.4vw]">{word}</i>
+        <i className="font-mazius text-[#ff9800] text-[4.5vw] sm:text-[3.5vw] lg:text-[1.4vw]">{word}</i>
         {wordIndex < text.split(' ').length - 1 ? ' ' : ''}
       </span>
     ) : (
@@ -68,7 +68,7 @@ export default function ImageTextSection({
 
       {/* Text Section */}
       <div className={`w-full lg:w-auto h-full flex-1 flex items-center justify-center ${imagePosition === "left" ? "lg:order-2" : "lg:order-1"} order-2`}>
-        <div className={`text-[4vw] sm:text-[3vw] lg:text-[1.2vw] text-[#333333] tracking-tight leading-relaxed text-left ${textClassName}`}>
+        <div className={`text-[4.5vw] sm:text-[3.5vw] lg:text-[1.2vw] text-[#333333] tracking-tight leading-relaxed text-left ${textClassName}`}>
           {textArray.map((paragraph, index) => (
             <p key={index} className={index > 0 ? "pt-2 sm:pt-3 lg:pt-4" : ""}>
               {typeof paragraph === 'string' ? highlightKeywords(paragraph) : paragraph}
@@ -122,7 +122,7 @@ export function AdvancedImageTextSection({
 
       {/* Text Section */}
       <div className={`w-full lg:w-auto h-full flex-1 flex items-center justify-center ${imagePosition === "left" ? "lg:order-2" : "lg:order-1"} order-2 ${textContainerClassName}`}>
-        <div className={`text-[4vw] sm:text-[3vw] lg:text-[1.2vw] text-[#333333] tracking-tight leading-relaxed text-left ${textClassName}`}>
+        <div className={`text-[4.5vw] sm:text-[3.5vw] lg:text-[1.2vw] text-[#333333] tracking-tight leading-relaxed text-left ${textClassName}`}>
           {textArray.map((paragraph, index) => (
             <p key={index} className={index > 0 ? "pt-2 sm:pt-3 lg:pt-4" : ""}>
               {typeof paragraph === 'string' ? highlightKeywords(paragraph) : paragraph}
@@ -177,7 +177,7 @@ export function ResponsiveImageTextSection({
 
       {/* Text Section */}
       <div className={`h-full flex-1 flex items-center justify-center ${imagePosition === "left" ? "md:order-2" : "md:order-1"} ${textMobileOrder}`}>
-        <div className={`text-[3.5vw] md:text-[1.2vw] text-[#333333] tracking-tight px-4 md:px-0 text-left ${textClassName}`}>
+        <div className={`text-[4vw] md:text-[1.2vw] text-[#333333] tracking-tight px-4 md:px-0 text-left ${textClassName}`}>
           {textArray.map((paragraph, index) => (
             <p key={index} className={index > 0 ? "pt-4" : ""}>
               {typeof paragraph === 'string' ? highlightKeywords(paragraph) : paragraph}
