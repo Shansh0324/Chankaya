@@ -1,0 +1,184 @@
+.imageTextSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 15vw;
+  gap: 4vw;
+  max-width: 90%;
+  margin: 0 auto;
+  
+  &.mobile {
+    flex-direction: column;
+    
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
+  }
+  
+  .imageContainer {
+    height: 36vw;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    
+    @media (max-width: 767px) {
+      height: 50vw;
+    }
+    
+    img {
+      object-fit: contain;
+      transition: transform 0.3s ease;
+      
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+  
+  .textContainer {
+    height: 100%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    .textContent {
+      font-size: 1.15vw;
+      color: #333333;
+      letter-spacing: -0.02em;
+      line-height: 1.6;
+      
+      @media (max-width: 767px) {
+        font-size: 4vw;
+        padding: 0 1rem;
+      }
+      
+      p {
+        margin: 0;
+        
+        &:not(:first-child) {
+          padding-top: 1rem;
+        }
+      }
+    }
+  }
+  
+  // Variants
+  &.centered {
+    .textContainer {
+      text-align: center;
+    }
+  }
+  
+  &.leftAligned {
+    .textContainer {
+      text-align: left;
+    }
+  }
+  
+  &.rightAligned {
+    .textContainer {
+      text-align: right;
+    }
+  }
+  
+  // Animation variants
+  &.fadeIn {
+    .imageContainer,
+    .textContainer {
+      opacity: 0;
+      animation: fadeInUp 0.8s ease forwards;
+    }
+    
+    .textContainer {
+      animation-delay: 0.2s;
+    }
+  }
+  
+  &.slideIn {
+    .imageContainer {
+      transform: translateX(-50px);
+      opacity: 0;
+      animation: slideInLeft 0.8s ease forwards;
+    }
+    
+    .textContainer {
+      transform: translateX(50px);
+      opacity: 0;
+      animation: slideInRight 0.8s ease forwards;
+      animation-delay: 0.2s;
+    }
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// Responsive breakpoints
+@media (max-width: 1024px) {
+  .imageTextSection {
+    gap: 3vw;
+    padding-top: 12vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .imageTextSection {
+    gap: 2vw;
+    padding-top: 10vw;
+    flex-direction: column;
+    
+    .imageContainer {
+      height: 40vw;
+    }
+    
+    .textContainer .textContent {
+      font-size: 3.5vw;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .imageTextSection {
+    gap: 1.5vw;
+    padding-top: 8vw;
+    
+    .imageContainer {
+      height: 35vw;
+    }
+    
+    .textContainer .textContent {
+      font-size: 3vw;
+    }
+  }
+}

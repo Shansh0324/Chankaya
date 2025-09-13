@@ -8,6 +8,7 @@ import About from "@/components/About";
 import Gallery from "@/components/Gallery";
 import Preloader from "@/components/PreLoader";
 import ChooseUs from "@/components/ChooseUs";
+import Carousel from "@/components/Carousel";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -33,6 +34,7 @@ export default function Home() {
           <About />
           <Gallery />
           <ChooseUs />
+          <Carousel />
         </>
       )}
      </>

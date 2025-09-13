@@ -13,10 +13,16 @@
     flex-direction: column;
     gap: 30px;
     position: relative;
+    padding-bottom: 120px; /* Add bottom padding for mobile to prevent button overlap */
+    
+    @media (min-width: 640px) {
+      padding-bottom: 140px; /* Slightly more padding for small tablets */
+    }
     
     @media (min-width: 768px) {
       flex-direction: row;
       gap: 50px;
+      padding-bottom: 0; /* Remove bottom padding on desktop */
     }
     
     p {
@@ -43,15 +49,21 @@
         font-size: clamp(14px, 2vw, 18px);
         width: 100%;
         font-weight: 300;
+        margin-bottom: 20px; /* Add bottom margin to create space before button */
+        
+        @media (min-width: 640px) {
+          margin-bottom: 30px; /* More space on small tablets */
+        }
         
         @media (min-width: 768px) {
           width: 80%;
+          margin-bottom: 0; /* Remove margin on desktop */
         }
       }
     }
     
     .button {
-      top: 80%;
+      top: 85%; /* Move button down slightly on mobile */
       left: 50%;
       transform: translateX(-50%);
       width: clamp(120px, 15vw, 180px);
@@ -65,7 +77,12 @@
       justify-content: center;
       cursor: pointer;
       
+      @media (min-width: 640px) {
+        top: 82%; /* Adjust for small tablets */
+      }
+      
       @media (min-width: 768px) {
+        top: 80%; /* Reset to original position on desktop */
         left: calc(100% - 200px);
         transform: none;
       }

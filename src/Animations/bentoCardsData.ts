@@ -20,7 +20,7 @@ export const bentoCardsData: BentoCardData[] = [
   },
   {
     id: "real-view",
-    imageSrc: "assets/image.png",
+    imageSrc: "assets/img7.png",
     imageAlt: "Neon Number 3",
     labelText: "Real",
     accentText: "View",
