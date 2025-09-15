@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import CircularGallery from '../CircularGallery';
 
 // Helper function to highlight specific words with italic styling
 const highlightKeywords = (text: string) => {
@@ -68,7 +69,7 @@ export default function ImageTextSection({
 
       {/* Text Section */}
       <div className={`w-full lg:w-auto h-full flex-1 flex items-center justify-center ${imagePosition === "left" ? "lg:order-2" : "lg:order-1"} order-2`}>
-        <div className={`text-[4.5vw] sm:text-[3.5vw] lg:text-[1.2vw] text-[#333333] tracking-tight leading-relaxed text-left ${textClassName}`}>
+        <div className={`text-[4.5vw] sm:text-[3.5vw] lg:text-[1.4vw] text-[#333333] tracking-tight leading-relaxed text-left ${textClassName}`}>
           {textArray.map((paragraph, index) => (
             <p key={index} className={index > 0 ? "pt-2 sm:pt-3 lg:pt-4" : ""}>
               {typeof paragraph === 'string' ? highlightKeywords(paragraph) : paragraph}
@@ -184,6 +185,65 @@ export function ResponsiveImageTextSection({
             </p>
           ))}
         </div>
+      </div>
+    </div>
+  );
+}
+
+// Component that includes CircularGallery
+export function ImageTextSectionWithGallery({
+  imageSrc,
+  imageAlt,
+  imageWidth = 500,
+  imageHeight = 500,
+  textContent,
+  imagePosition = "left",
+  className = "",
+  textClassName = "",
+  imageClassName = "",
+  containerClassName = "",
+  galleryHeight = 600
+}: ImageTextSectionProps & {
+  galleryHeight?: number;
+}) {
+  // Convert textContent to array if it's a string
+  const textArray = Array.isArray(textContent) ? textContent : [textContent];
+
+  return (
+    <div className={`flex flex-col items-center justify-between pt-[20vw] sm:pt-[15vw] lg:pt-[15vw] gap-[2vw] sm:gap-[3vw] lg:gap-[4vw] max-w-[95%] sm:max-w-[90%] mx-auto px-4 sm:px-6 lg:px-0 ${containerClassName} ${className}`}>
+      {/* Image and Text Section */}
+      <div className="flex flex-col lg:flex-row items-center justify-between gap-[2vw] sm:gap-[3vw] lg:gap-[4vw] w-full">
+        {/* Image Section - Show on all devices */}
+        <div className={`flex h-[30vw] sm:h-[45vw] lg:h-[36vw] flex-1 justify-center pb-[4vw] sm:pb-[3vw] lg:pb-[2vw] ${imagePosition === "left" ? "lg:order-1" : "lg:order-2"} order-1`}>
+          <Image
+            src={imageSrc}
+            alt={imageAlt}
+            width={imageWidth}
+            height={imageHeight}
+            className={`object-contain w-full h-full max-w-[250px] sm:max-w-[400px] lg:max-w-none ${imageClassName}`}
+          />
+        </div>
+
+        {/* Text Section */}
+        <div className={`w-full lg:w-auto h-full flex-1 flex items-center justify-center ${imagePosition === "left" ? "lg:order-2" : "lg:order-1"} order-2`}>
+          <div className={`text-[4.5vw] sm:text-[3.5vw] lg:text-[1.4vw] text-[#333333] tracking-tight leading-relaxed text-left ${textClassName}`}>
+            {textArray.map((paragraph, index) => (
+              <p key={index} className={index > 0 ? "pt-2 sm:pt-3 lg:pt-4" : ""}>
+                {typeof paragraph === 'string' ? highlightKeywords(paragraph) : paragraph}
+              </p>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Circular Gallery Section */}
+      <div style={{ height: `${galleryHeight}px`, position: 'relative', width: '100%' }}>
+        <CircularGallery 
+          bend={3} 
+          textColor="#ffffff" 
+          borderRadius={0.05} 
+          scrollEase={0.02}
+        />
       </div>
     </div>
   );
